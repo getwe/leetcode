@@ -11,10 +11,28 @@
 #define  __TEST_H_
 
 #include<string.h>
+#include<stdlib.h>
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<stack>
+
 using namespace std;
+
+// Definition for binary tree
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+// Definition for singly-linked list.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
 
 vector<int> OJSplit(const char* c)
 {
@@ -104,6 +122,31 @@ TreeNode* OJTree(const char *str){
         Queue.push(node->right);
     }
     return root;
+}
+
+ListNode* buildList(const char *c) {
+    vector<int> num = OJSplit(c);
+
+    ListNode * head = NULL;
+    ListNode * tail = NULL;
+    for (int i=0;i<num.size();i++){
+        ListNode * node = new ListNode(num[i]);
+        if (head == NULL){
+            head = tail = node;
+            continue;
+        }
+        tail->next = node;
+        tail = tail->next;
+    }
+    return head;
+}
+
+void printList(ListNode *head){
+    while(head){
+        cout<<head->val<<"\t";
+        head = head->next;
+    }
+    cout<<endl;
 }
 
 

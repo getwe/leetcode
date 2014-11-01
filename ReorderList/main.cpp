@@ -18,42 +18,8 @@
  * For example,
  * Given {1,2,3,4}, reorder it to {1,4,2,3}.
  */
-#include<stdlib.h>
-#include<iostream>
-#include<vector>
+#include"../test/test.h"
 using namespace std;
-
-/**
- * Definition for singly-linked list.
- */
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
-ListNode* buildList(string num) {
-    ListNode * head = NULL;
-    ListNode * tail = NULL;
-    for (int i=0;i<num.length();i++){
-        ListNode * node = new ListNode(num[i]);
-        if (head == NULL){
-            head = tail = node;
-            continue;
-        }
-        tail->next = node;
-        tail = tail->next;
-    }
-    return head;
-}
-
-void printList(ListNode *head){
-    while(head){
-        cout<<char(head->val)<<"\t";
-        head = head->next;
-    }
-    cout<<endl;
-}
 
 
 class Solution {
@@ -119,7 +85,7 @@ class Solution {
 
 int main() {
     Solution s;
-    ListNode *list = buildList("abcdef");
+    ListNode *list = buildList("1,2,3,4,5,6,7");
     printList(list);
     s.reorderList(list);
     printList(list);
