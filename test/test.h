@@ -141,12 +141,14 @@ ListNode* buildList(const char *c) {
     return head;
 }
 
-void printList(ListNode *head){
-    while(head){
-        cout<<head->val<<"\t";
-        head = head->next;
+ListNode* printList(ListNode *head){
+    ListNode * h = head;
+    while(h){
+        cout<<h->val<<"\t";
+        h = h->next;
     }
     cout<<endl;
+    return head;
 }
 
 
