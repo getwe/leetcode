@@ -37,6 +37,9 @@ struct ListNode {
 vector<int> OJSplit(const char* c)
 {
     vector<int> arr;
+    if (!strlen(c)){
+        return arr;
+    }
     char * buf = new char[ strlen(c) ];
     strncpy(buf,c,strlen(c));
     
@@ -142,6 +145,10 @@ ListNode* buildList(const char *c) {
 }
 
 ListNode* printList(ListNode *head){
+    if (!head){
+        cout<<"<nil>"<<endl;
+        return head;
+    }
     ListNode * h = head;
     while(h){
         cout<<h->val<<"\t";
