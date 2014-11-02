@@ -58,6 +58,16 @@ vector<int> OJSplit(const char* c)
     return arr;
 }
 
+int* OJSplitArray(const char* c)
+{
+    vector<int> arr = OJSplit(c);
+    int * arr2 = new int[arr.size()];
+    for (int i=0;i<arr.size();i++){
+        arr2[i] = arr[i];
+    }
+    return arr2;
+}
+
 TreeNode* OJTree(const char *str){
     /*
      *
@@ -157,7 +167,6 @@ ListNode* printList(ListNode *head){
     cout<<endl;
     return head;
 }
-
 
 
 
