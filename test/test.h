@@ -62,7 +62,7 @@ int* OJSplitArray(const char* c)
 {
     vector<int> arr = OJSplit(c);
     int * arr2 = new int[arr.size()];
-    for (int i=0;i<arr.size();i++){
+    for (size_t i=0;i<arr.size();i++){
         arr2[i] = arr[i];
     }
     return arr2;
@@ -142,7 +142,7 @@ ListNode* buildList(const char *c) {
 
     ListNode * head = NULL;
     ListNode * tail = NULL;
-    for (int i=0;i<num.size();i++){
+    for (size_t i=0;i<num.size();i++){
         ListNode * node = new ListNode(num[i]);
         if (head == NULL){
             head = tail = node;
